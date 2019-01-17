@@ -1,2 +1,6 @@
 ---
 # defaults file for docker-registry
+
+SRV_PATH: '/data/srv'
+DOCKER_REGISTRY_USER: 'root'
+DOCKER_REGISTRY_PASSWORD: 'root'
