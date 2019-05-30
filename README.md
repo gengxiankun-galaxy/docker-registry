@@ -24,7 +24,7 @@ Example Playbooks
 
     - hosts: servers
       roles:
-         - { role: docker-registry }
+         - gengxiankun.docker-registry
 
 License
 -------
