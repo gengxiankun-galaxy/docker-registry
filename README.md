@@ -3,6 +3,11 @@ DOCKER-REGISTRY
 
 Deploy the docker-registry service running under the container via ansible.
 
+Installation
+------------
+
+`ansible-galaxy install docker-registry`
+
 Dependencies
 ------------
 
