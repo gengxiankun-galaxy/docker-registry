@@ -1,7 +1,8 @@
 ---
-# defaults file for docker-registry
-
 SRV_PATH: '/data/srv'
+OPT_PATH: '/opt/gengxiankun-galaxy'
+
+DOCKER_REGISTRY_PORT: 5000
+DOCKER_REGISTRY_HTPASSWD_ENABLED: true
 DOCKER_REGISTRY_USER: 'root'
 DOCKER_REGISTRY_PASSWORD: 'root'
-OPT_PATH: '/opt/gengxiankun-galaxy'

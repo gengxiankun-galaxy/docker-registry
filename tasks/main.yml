@@ -12,6 +12,7 @@
 
 - name: 生成鉴权密码文件
   shell: 'docker run --entrypoint htpasswd registry:2 -Bbn {{ DOCKER_REGISTRY_USER }} {{ DOCKER_REGISTRY_PASSWORD }}  > {{ OPT_PATH }}/docker-registry/auth/htpasswd'
+  when: DOCKER_REGISTRY_HTPASSWD_ENABLED == true
 
 - name: 配置docker-compose.yml
   template: src=docker-compose.yml.j2 dest={{ OPT_PATH }}/docker-registry/docker-compose.yml
