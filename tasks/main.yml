@@ -1,5 +1,5 @@
 - name: 清理旧数据
-  shell: 'docker-compose -f {{ OPT_PTAH }}/docker-registry/docker-compose.yaml rm -fsva && rm -rf {{ OPT_PATH }}/docker-registry'
+  shell: 'docker-compose -f {{ OPT_PATH }}/docker-registry/docker-compose.yaml rm -fsva && rm -rf {{ OPT_PATH }}/docker-registry'
   ignore_errors: yes
 
 - name: 预处理
