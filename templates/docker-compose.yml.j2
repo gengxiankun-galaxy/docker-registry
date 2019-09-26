@@ -5,13 +5,13 @@ registry:
   ports:
     - {{ DOCKER_REGISTRY_PORT }}:5000
   environment:
-    {% if DOCKER_REGISTRY_HTPASSWD_ENABLED == true %}
+{% if DOCKER_REGISTRY_HTPASSWD_ENABLED == true %}
     REGISTRY_AUTH: htpasswd
     REGISTRY_AUTH_HTPASSWD_PATH: /auth/htpasswd
     REGISTRY_AUTH_HTPASSWD_REALM: Registry Realm
-    {% endif %}
+{% endif %}
   volumes:
     - {{ SRV_PATH }}/registry:/var/lib/registry
-    {% if DOCKER_REGISTRY_HTPASSWD_ENABLED == true %}
+{% if DOCKER_REGISTRY_HTPASSWD_ENABLED == true %}
     - {{ OPT_PATH }}/docker-registry/auth:/auth
-    {% endif %}
+{% endif %}
