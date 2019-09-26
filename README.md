@@ -6,7 +6,7 @@ Deploy the docker-registry service running under the container via ansible.
 Installation
 ------------
 
-`ansible-galaxy install docker-registry`
+`ansible-galaxy install gengxiankun.docker_registry`
 
 Dependencies
 ------------
