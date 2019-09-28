@@ -20,9 +20,9 @@ parameter | description
 ------------ | -------------
 SRV_PATH | data persistence directory
 OPT_PATH | deployment service configuration directory
+DOCKER_REGISTRY_HTPASSWD_ENABLED | whether to open htpasswd auth
 DOCKER_REGISTRY_USER | docker registry auth user
 DOCKER_REGISTRY_PASSWORD | docker registry auth password
-
 
 Example Playbooks
 ----------------
@@ -30,6 +30,12 @@ Example Playbooks
     - hosts: servers
       roles:
          - gengxiankun.docker-registry
+      vars:
+      	SRV_PATH: /opt/gengxiankun-galaxy
+      	OPT_PATH: /data/srv
+      	DOCKER_REGISTRY_HTPASSWD_ENABLED: true
+      	DOCKER_REGISTRY_USER: 
+      	DOCKER_REGISTRY_PASSWORD: 
 
 License
 -------
