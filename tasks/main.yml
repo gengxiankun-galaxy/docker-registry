@@ -11,7 +11,7 @@
   #shell: 'openssl req -newkey rsa:2048 -nodes -sha256 -keyout /opt/gengxiankun-galaxy/docker-registry/certs/{{ DOCKER_REGISTRY_CN }}.key -x509 -days 365 -out /opt/gengxiankun-galaxy/docker-registry/certs/{{ DOCKER_REGISTRY_CN }}.crt -subj "/C={{ DOCKER_REGISTRY_C }}/ST={{ DOCKER_REGISTRY_ST }}/L={{  DOCKER_REGISTRY_L }}/O={{ DOCKER_REGISTRY_O }}/OU={{ DOCKER_REGISTRY_OU }}/CN={{ DOCKER_REGISTRY_CN }}/emailAddress={{ DOCKER_REGISTRY_EMAIL_ADDRESS }}"'
 
 - name: 生成鉴权密码文件
-  shell: 'docker run --entrypoint htpasswd registry:2 -Bbn {{ DOCKER_REGISTRY_USER }} {{ DOCKER_REGISTRY_PASSWORD }}  > {{ OPT_PATH }}/docker-registry/auth/htpasswd'
+  shell: 'docker run --entrypoint htpasswd registry:2.7.0 -Bbn {{ DOCKER_REGISTRY_USER }} {{ DOCKER_REGISTRY_PASSWORD }}  > {{ OPT_PATH }}/docker-registry/auth/htpasswd'
   when: DOCKER_REGISTRY_HTPASSWD_ENABLED
 
 - name: 配置docker-compose.yml
